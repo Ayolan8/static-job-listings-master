@@ -21,16 +21,84 @@ body{
     font-size: 15px;
     font-family: 'League S partan', sans-serif;
     background-color: white;
-    /* background-color: var(--Light-Grayish-Cyan); */
 }
 
 header {
-    height: 20vh;
+    height: 10em;
     background-color: var(--Desaturated-Dark-Cyan);
     background-image: url('./images/bg-header-desktop.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100% 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    position: absolute;
+    background-color: var(--Light-Grayish-Cyan);
+    top: 15%;
+    left: 0%;
+    right: 0%;
+    margin-left: 9em;
+    margin-right: 9em;
+    background-color: white;
+    box-shadow:  0px 4px 18px .04px var(--Dark-Grayish-Cyan);
+    padding: 1em 1.5em;
+    z-index: 8;
+    border-radius: 4px;
+}
+
+#nav-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1em;
+    padding: 2em 1.5em;
+}
+
+#nav-links > a {
+    color: var(--Desaturated-Dark-Cyan);
+    font-weight: 600;
+    text-decoration: none;
+    background-color: var(--Light-Grayish-Cyan);
+    border: 1px solid var(--Light-Grayish-Cyan);
+    padding: .5em;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#nav-links  span {
+    margin-left: .5em;
+    background-color: var(--Desaturated-Dark-Cyan);
+    color: var(--Light-Grayish-Cyan);
+    padding: .5em;
+}
+
+#nav-links span:hover {
+    background-color: var(--Very-Dark-Grayish-Cyan);
+}
+
+#clear {
+    color: var(--Very-Dark-Grayish-Cyan);
+    font-variant: inherit;
+    font-weight: 600;
+    border: none;
+    background-color: white;
+}
+
+#clear:hover {
+    color: var(--Desaturated-Dark-Cyan);
+}
+
+p, button, h3, #clear  {
+    cursor: pointer;
+
 }
 
 main{
@@ -52,21 +120,19 @@ main{
     justify-content: space-between;
     align-items: center;
     padding: 2em 3em;
-    /* gap: 3em; */
-    /* margin-top: 2em; */
     margin-bottom: 2em;
-
     background-color: white;
-    /* background-color: var(--Light2-Grayish-Cyan); */
     box-shadow:  0px 4px 18px .04px var(--Dark-Grayish-Cyan);
     border-radius: 8px;
-    /* border: .2px solid rgba(cyan, cyan, cyan, 0.5); */
 }
 
 .position {
     color: var(--Very-Dark-Grayish-Cyan);
-    font-weight: bolder;
-    
+    font-weight: bolder; 
+}
+
+.position:hover {
+    color: var(--Desaturated-Dark-Cyan);
 }
 
 .listing {
@@ -82,12 +148,12 @@ main{
 
 
 
-button {
+.featured, .new {
     
     font-variant: small-caps;
     border-radius: 15px;
     color: var(--Light-Grayish-Cyan);
-    border: none;
+    font-weight: lighter;
 }
 
 .new {
@@ -97,9 +163,13 @@ button {
 }
 
 .featured {
+    display: inline-block;
     background-color: var(--Very-Dark-Grayish-Cyan);
-    width: 85px;
-    padding: .25em 0;
+    width: 90px;
+    padding: 0em .4em;
+    border-radius: 15px;
+   
+    line-height: 22px ;
 }
 
 
@@ -138,7 +208,6 @@ img {
     height: 80px;
 }
 
-
 .about {
     display: flex;
     align-items: center;
@@ -173,11 +242,35 @@ img {
     border-radius: 5px;
 }
 
+.roles-languages > p:hover {
+    background-color: var(--Desaturated-Dark-Cyan);
+    color: var(--Light2-Grayish-Cyan);
+}
+
 .hide {
     display: none;
 }
 
+.attribution { 
+    font-size: 18px; 
+    text-align: center; 
+}
+
+.attribution a {
+     color: hsl(228, 45%, 44%); 
+}
+
 @media screen and (max-width: 1030px) {
+
+    .nav {
+        margin-left: 3em;
+        margin-right: 3em;
+    }
+
+    #nav-links {
+        /* padding: 1em ; */
+    }
+
     main{
         padding-left: 3em;
         padding-right: 3em;
@@ -195,6 +288,16 @@ img {
         gap: .7em;
     }
 
+    .nav {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
+    #nav-links {
+        padding: .6em;
+        margin-left: 0em;
+    }
+
     .job-card {
         padding: 2em .6em;
     }
@@ -210,6 +313,11 @@ img {
 @media screen and (max-width: 769px) {
     .roles-languages {
         gap: .5em;
+    }
+
+    .nav {
+        margin-left: .5em;
+        margin-right: .5em;
     }
 
     main {
@@ -242,6 +350,16 @@ img {
         background-color: var(--Dark-Grayish-Cyan);
         height: 1px;
         width: 100%;
+        opacity: .6;
+    }
+
+    .nav {
+        margin-left: 1.5em;
+        margin-right: 1.5em;
+    }
+
+    #nav-links {
+        margin-left: -1.8em;
     }
 
     main {
@@ -261,7 +379,6 @@ img {
     }
 
     .listing {
-        /* display: flex; */
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
@@ -297,9 +414,8 @@ img {
     .roles-languages {
         flex-wrap: wrap;
         gap: 1.5em;
+        margin-top: -9px;
     }
-
-    
 
 }
     
