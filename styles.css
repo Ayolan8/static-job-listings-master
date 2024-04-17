@@ -122,7 +122,7 @@ main{
     padding: 2em 3em;
     margin-bottom: 2em;
     background-color: white;
-    box-shadow:  0px 4px 18px .04px var(--Dark-Grayish-Cyan);
+    box-shadow:  0px 4px 18px .04px var(--Light2-Grayish-Cyan);
     border-radius: 8px;
 }
 
